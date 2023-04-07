@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:write": "next lint --cache --fix"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -25,6 +26,11 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
-    "husky": "^8.0.3"
-  }
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0"
+  },
+  "lint-staged": {
+  "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+}
 }
